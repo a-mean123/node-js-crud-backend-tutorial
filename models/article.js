@@ -5,7 +5,8 @@ const Article = mongoose.model( 'Article' , {
 
     titre: String,
     description: String,
-    likes: Number
+    likes: Number,
+    image: String
 
 } );
 
