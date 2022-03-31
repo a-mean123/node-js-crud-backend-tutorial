@@ -62,6 +62,25 @@ router.post( '/create' , upload.any('image') , ( req , res )=>{
   
   } )
   
+
+  router.get( '/getbytitreandlikes/:titre/:likes' , (req, res)=>{
+
+    Article.find({ titre: req.params.titre, likes: req.params.likes })
+        .then(
+            (allarticles)=>{
+                res.send(allarticles);
+            }
+        )
+        .catch(
+            (error)=>{
+                res.send(error);
+            }
+        )
+
+} )
+
+
+
   
   router.get('/getbyid/:id' , (req, res)=>{
   
